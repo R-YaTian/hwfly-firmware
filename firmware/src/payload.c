@@ -54,7 +54,7 @@ enum STATUSCODE flash_payload(uint8_t *cid, enum DEVICE_TYPE cpu_type)
 			ret = mmc_check_and_if_different_write(0x20, mariko_bct, sizeof(mariko_bct));
 			if (ret)
 				continue;
-
+/*
 			// Check and replace 3rd BCT with official one if header is wrong.
 			ret = mmc_check_and_if_header_different_write_all(0x40, bct_mariko_1500, sizeof(bct_mariko_1500));
 			if (ret)
@@ -64,6 +64,7 @@ enum STATUSCODE flash_payload(uint8_t *cid, enum DEVICE_TYPE cpu_type)
 			ret = mmc_check_and_if_header_different_write_all(0x60, bct_mariko_1500, sizeof(bct_mariko_1500));
 			if (ret)
 				continue;
+*/
 		}
 
 		ret = mmc_check_and_if_different_write(0x1F80, payload, sizeof(payload));

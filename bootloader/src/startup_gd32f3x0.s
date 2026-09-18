@@ -261,6 +261,7 @@ USBFS_IRQHandler:
 
 
 .global jump_to_app
+.thumb_func
 jump_to_app:
 	LDR R2, =0xE000ED08
 	STR R0, [R2]
