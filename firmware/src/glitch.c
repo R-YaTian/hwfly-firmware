@@ -100,6 +100,10 @@ enum STATUSCODE glitch(logger *lgr, session_info_t *session_info, bool is_traini
 	{
 		case OK_GLITCH_SUCCESS:
 			leds_set_pattern(&lp_glitch_done);
+			if (!is_training)
+			{
+				session_info->payload_flashed = 1;
+			}
 			break;
 		case ERR_GLITCH_NO_EMMC_COMM:
 			leds_set_pattern(&lp_err_emmc);
